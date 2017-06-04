@@ -1,0 +1,93 @@
+TESTING MY BINARY RELATION
+-------------------------------------------------
+1) addPair(X xValue, Y yValue)
+Description: The relation adds a given pair.
+Test data: 
+
+addPair(FR, French);
+addPair(IT, Italian);
+addPair(DE, German);
+addPair(BE, French);
+addPair(BE, Flemish);
+addPair(NL, Dutch);
+addPair(UK, English);
+addPair(IE, English);
+addPair(IE, Irish);
+
+Content of the binary relation: 
+(BE: Flemish), (BE: French), 
+(IE: Irish), (IE: English), (UK: English), (NL: Dutch), 
+(FR: French), 
+(IT: Italian), 
+(DE: German), 
+
+-------------------------------------------------
+2) contains(X xValue, Y yValue)
+Description: Returns a boolean to indicate if the binary relation contains a given X value and Y value pair.
+Result of calling contains(NL, Dutch): true
+-------------------------------------------------
+3) getValues(X xValue)
+Description: Returns a set containing all values that are related to the given X value
+Result of calling getValues(BE): [Flemish, French]
+-------------------------------------------------
+4) getXvalues(Y yValue)
+Description: Returns a set containing all keys that are related to the given Y value
+Result of calling getXvalues(French): [BE, FR]
+-------------------------------------------------
+5) removePair(X xValue, Y yValue)
+Description: Removes a given pair.
+BinaryRelation before calling removePair(NL, Dutch): 
+(BE: Flemish), (BE: French), 
+(IE: Irish), (IE: English), (UK: English), (NL: Dutch), 
+(FR: French), 
+(IT: Italian), 
+(DE: German), 
+
+BinaryRelation after calling removePair(NL, Dutch): 
+(BE: Flemish), (BE: French), 
+(IE: Irish), (IE: English), (UK: English), 
+(FR: French), 
+(IT: Italian), 
+(DE: German), 
+
+-------------------------------------------------
+6) removeRelationsByX(X xValue)
+Description: Removes all pairs that contain a given xValue
+Content of the binary relation: 
+(BE: Flemish), (BE: French), 
+(IE: Irish), (IE: English), (UK: English), (NL: Dutch), 
+(FR: French), 
+(IT: Italian), 
+(DE: German), 
+
+BinaryRelation after calling removeRelationsByX(BE):
+(NL: Dutch), (IE: Irish), (IE: English), (UK: English), 
+(FR: French), 
+(IT: Italian), 
+(DE: German), 
+
+-------------------------------------------------
+7) removeRelationsByY(Y yValue)
+Description: Removes all pairs that contain a given Y value
+Content of the binary relation: 
+(BE: Flemish), (BE: French), 
+(IE: Irish), (IE: English), (UK: English), (NL: Dutch), 
+(FR: French), 
+(IT: Italian), 
+(DE: German), 
+
+BinaryRelation after calling removeRelationsByY(French):
+(BE: Flemish), 
+(IE: Irish), (IE: English), (UK: English), (NL: Dutch), 
+(IT: Italian), 
+(DE: German), 
+
+-------------------------------------------------
+8) clear()Description: Clears the relation
+BinaryRelation before calling clear(): (BE: Flemish), (BE: French), 
+(IE: Irish), (IE: English), (UK: English), (NL: Dutch), 
+(FR: French), 
+(IT: Italian), 
+(DE: German), 
+
+Result after calling clear() and contains(IE, Irish): false
